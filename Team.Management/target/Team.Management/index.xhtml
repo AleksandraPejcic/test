@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">
+ <h:head>
+     <title>Projects</title>
+ </h:head>
+ <h:body>
+     <h:form>
+		<p:dataTable var="project" value="#{projectsController.allProjects}">
+			<p:column headerText="Id">
+				<h:outputText value="#{project.id}" />
+			</p:column>
+
+			<p:column headerText="Name">
+				<h:outputText value="#{project.name}" />
+			</p:column>
+
+			<p:column headerText="Description">
+				<h:outputText value="#{project.description}" />
+			</p:column>
+
+			<p:column headerText="Status">
+				<h:outputText value="#{project.status}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
