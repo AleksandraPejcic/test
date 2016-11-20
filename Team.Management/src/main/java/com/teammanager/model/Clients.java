@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "clients")
@@ -16,9 +19,9 @@ public class Clients {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-//	@OneToOne(fetch = FetchType.LAZY)
-//	@PrimaryKeyJoinColumn
-//	private Set<Projects> projects;
+	@OneToOne(mappedBy="client")
+	@Cascade(value=org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+	private Projects project;
 		
 	public int getId() {
 		return this.id;
@@ -28,12 +31,12 @@ public class Clients {
 		this.id = id;
 	}
 	
-//	public Set<Projects> getProjects() {
-//		return this.projects;
-//	}
-//	
-//	public void setProjects(final Set<Projects> projects) {
-//		this.projects = projects;
-//	}
+	public Projects getProject() {
+		return this.project;
+	}
+	
+	public void setProject(final Projects project) {
+		this.project = project;
+	}
 
 }

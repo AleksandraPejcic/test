@@ -1,14 +1,16 @@
 package com.teammanager.model;
 
 import java.util.Date;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.FetchType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -17,34 +19,46 @@ import javax.persistence.Table;
  * @author Aki
  *
  */
-@Table(name="Projects")
+@Entity
+@Table(name="projects")
 public class Projects {
 	
 	@Id
 	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Column(name="name")
 	private String name;
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "id")
-//	private Set<Team> teams;
+	
+	@OneToMany(mappedBy="id")
+	private Set<Team> teams;
+	
 	@Column(name="description")
 	private String description;
+	
 	@Column(name="status")
 	private String status;
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL)
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
 	private Users createdByUser;
+	
 	@Column(name="createdDate")
 	private Date createdDate;
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL)
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
 	private Clients client;
 	
+	@Column(name="time")
 	private Date time;
 	
+	@Column(name="expences")
 	private String expences;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(int id) {
@@ -52,23 +66,23 @@ public class Projects {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-//	public Set<Team> getTeams() {
-//		return teams;
-//	}
-//
-//	public void setTeams(Set<Team> teams) {
-//		this.teams = teams;
-//	}
+	public Set<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(Set<Team> teams) {
+		this.teams = teams;
+	}
 
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
 
 	public void setDescription(String description) {
@@ -76,7 +90,7 @@ public class Projects {
 	}
 
 	public String getStatus() {
-		return status;
+		return this.status;
 	}
 
 	public void setStatus(String status) {
@@ -84,7 +98,7 @@ public class Projects {
 	}
 
 	public Users getCreatedByUser() {
-		return createdByUser;
+		return this.createdByUser;
 	}
 
 	public void setCreatedByUser(Users createdByUser) {
@@ -92,7 +106,7 @@ public class Projects {
 	}
 
 	public Date getCreatedDate() {
-		return createdDate;
+		return this.createdDate;
 	}
 
 	public void setCreatedDate(Date createdDate) {
@@ -100,7 +114,7 @@ public class Projects {
 	}
 
 	public Clients getClient() {
-		return client;
+		return this.client;
 	}
 
 	public void setClient(Clients client) {
@@ -108,7 +122,7 @@ public class Projects {
 	}
 
 	public Date getTime() {
-		return time;
+		return this.time;
 	}
 
 	public void setTime(Date time) {
@@ -116,7 +130,7 @@ public class Projects {
 	}
 
 	public String getExpences() {
-		return expences;
+		return this.expences;
 	}
 
 	public void setExpences(String expences) {

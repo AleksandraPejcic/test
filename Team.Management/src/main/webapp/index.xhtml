@@ -15,6 +15,10 @@
 			<p:column headerText="Name">
 				<h:outputText value="#{project.name}" />
 			</p:column>
+			
+			<p:column headerText="Created by">
+				<h:outputText value="#{project.createdByUser.userFirstName}" />
+			</p:column>
 
 			<p:column headerText="Description">
 				<h:outputText value="#{project.description}" />
