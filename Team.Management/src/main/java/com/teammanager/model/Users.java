@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "users")
@@ -16,9 +19,9 @@ public class Users {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
-//	@OneToOne(fetch = FetchType.LAZY)
-//	@PrimaryKeyJoinColumn
-//	private Projects projects;
+	@OneToOne(mappedBy="createdByUser")
+	@Cascade(value=org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+	private Projects projects;
 	
 	public int getId() {
 		return this.id;

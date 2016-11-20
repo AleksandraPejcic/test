@@ -13,14 +13,6 @@ public class ProjectsDaoImpl implements ProjectsDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
-		 
-    public ProjectsDaoImpl() {
-		//EMPTY
-	}
-
-	public ProjectsDaoImpl(final SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
  
     @Override
     @Transactional

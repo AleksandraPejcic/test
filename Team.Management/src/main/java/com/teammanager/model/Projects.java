@@ -1,14 +1,18 @@
 package com.teammanager.model;
 
 import java.util.Date;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.FetchType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -17,30 +21,42 @@ import javax.persistence.Table;
  * @author Aki
  *
  */
-@Table(name="Projects")
+@Entity
+@Table(name="projects")
 public class Projects {
 	
 	@Id
 	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Column(name="name")
 	private String name;
-//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "id")
-//	private Set<Team> teams;
+	
+	@OneToMany(mappedBy="project")
+	private Set<Team> team;
+	
 	@Column(name="description")
 	private String description;
+	
 	@Column(name="status")
 	private String status;
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL)
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
 	private Users createdByUser;
+	
 	@Column(name="createdDate")
 	private Date createdDate;
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "id", cascade = CascadeType.ALL)
+	
+	@ManyToOne(optional = false)
+    @JoinColumn(name="clientId")
 	private Clients client;
 	
+	@Column(name="time")
 	private Date time;
 	
+	@Column(name="expences")
 	private String expences;
 
 	public int getId() {

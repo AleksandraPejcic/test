@@ -42,13 +42,13 @@
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 	<bean id="teamDao" class="com.teammanager.dao.TeamDaoImpl">
-	<!-- 	<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> -->
+	 	<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
 	</bean>
 	<bean id="clientsDao" class="com.teammanager.dao.ClientsDaoImpl">
-<!-- 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> -->
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
 	</bean>
 	<bean id="usersDao" class="com.teammanager.dao.UsersDaoImpl">
-	<!-- 	<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> -->
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
 	</bean>
 	
 	 <!-- User Service Declaration -->
