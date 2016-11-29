@@ -65,18 +65,6 @@ public class Users {
 	public void setId(final int id) {
 		this.id = id;
 	}
-<<<<<<< origin/master
-	
-//	public void setProjects(final Projects projects) {
-//		this.projects = projects;
-//	}
-//	
-//	public Projects getProjects() {
-//		return this.projects;
-//	}
-
-=======
->>>>>>> local
 
 	public String getUserEmail() {
 		return userEmail;

@@ -22,7 +22,6 @@ public class Clients {
 //	@PrimaryKeyJoinColumn
 //	private Set<Projects> projects;
 		
-=======
 	@Column(name="name")
 	private String name;
 	
@@ -47,7 +46,6 @@ public class Clients {
 	@Column(name="clientSince")
 	private Date clientSince;
 	
->>>>>>> local
 	public int getId() {
 		return this.id;
 	}
@@ -55,7 +53,6 @@ public class Clients {
 	public void setId(final int id) {
 		this.id = id;
 	}
-<<<<<<< origin/master
 	
 //	public Set<Projects> getProjects() {
 //		return this.projects;
@@ -127,6 +124,6 @@ public class Clients {
 
 	public void setClientSince(final Date clientSince) {
 		this.clientSince = clientSince;
->>>>>>> local
+	}
 
 }

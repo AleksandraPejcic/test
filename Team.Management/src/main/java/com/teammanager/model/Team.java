@@ -16,15 +16,6 @@ import org.hibernate.annotations.Cascade;
 public class Team {
 	
 	@Id
-	@Column(name="id")
-<<<<<<< origin/master
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	
-	@ManyToOne
-	@JoinColumn(name="projectId", nullable=false)
-    private Projects project;
-=======
 	@GeneratedValue
 	private int id;
 	
@@ -41,7 +32,6 @@ public class Team {
 		
 	@Column(name="memberSince")
 	private Date memberSince;
->>>>>>> local
 	
 	public int getId() {
 		return this.id;
