@@ -1,7 +1,6 @@
 package com.teammanager.model;
 
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+=======
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+>>>>>>> local
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -35,6 +38,11 @@ public class Projects {
 	
 	@OneToMany(mappedBy="project")
 	private Set<Team> team;
+=======
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Team team;
+>>>>>>> local
 	
 	@Column(name="description")
 	private String description;
@@ -82,6 +90,14 @@ public class Projects {
 //	public void setTeams(Set<Team> teams) {
 //		this.teams = teams;
 //	}
+=======
+	public Team getTeams() {
+		return team;
+	}
+
+	public void setTeams(final Team team) {
+		this.team = team;
+>>>>>>> local
 
 	public String getDescription() {
 		return description;

@@ -23,7 +23,7 @@
 				<value>com.teammanager.model.Projects</value>
 <!-- 				<value>com.teammanager.model.Bug</value> -->
 				<value>com.teammanager.model.Clients</value>
-<!-- 				<value>com.teammanager.model.Tasks</value> -->
+ 				<value>com.teammanager.model.Tasks</value> 
 				<value>com.teammanager.model.Team</value>
 				<value>com.teammanager.model.Users</value>
 <!-- 				<value>com.teammanager.model.LogTime</value> -->
@@ -37,20 +37,18 @@
 			</props>
 		</property>
 	</bean>
-
-
 	
 	<bean id="projectsDao" class="com.teammanager.dao.ProjectsDaoImpl">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 	<bean id="teamDao" class="com.teammanager.dao.TeamDaoImpl">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+	 	<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
 	</bean>
 	<bean id="clientsDao" class="com.teammanager.dao.ClientsDaoImpl">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
 	</bean>
 	<bean id="usersDao" class="com.teammanager.dao.UsersDaoImpl">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
 	</bean>
 	
 	 <!-- User Service Declaration -->

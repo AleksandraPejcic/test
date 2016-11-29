@@ -1,6 +1,8 @@
 com\teammanager\dao\ClientsDao.class
 com\teammanager\dao\UsersDaoImpl.class
 com\teammanager\model\Clients.class
+com\teammanager\dao\TasksDaoImpl.class
+com\teammanager\dao\TasksDao.class
 com\teammanager\model\Tasks.class
 com\teammanager\model\Projects.class
 com\teammanager\model\LogTime.class
