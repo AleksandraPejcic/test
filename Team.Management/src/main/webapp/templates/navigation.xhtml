@@ -7,8 +7,26 @@
       xmlns:p="http://primefaces.org/ui">
      <ui:composition>
         <h:form id="navigation" style="width: 100%">
-            <p:button outcome="projects" value="projects" styleClass="leftMenuButton" />
-            <p:separator style="width:300px; height:3px; margin:3px;"/>
-        </h:form>
+       <p:menu>
+			<p:submenu label="Manage projects">
+				<p:menuitem value="Projects" outcome="projects"
+					icon="ui-icon-star" />
+				<p:menuitem value="Tasks" outcome="tasks"
+					icon="ui-icon-star" />
+				<p:menuitem value="Bugs" outcome="bugs"
+					icon="ui-icon-star" />
+			</p:submenu>
+			<p:submenu label="Manage teams">
+				<p:menuitem value="Teams" outcome="teams"
+					icon="ui-icon-star" />
+				<p:menuitem value="Users" outcome="users"
+					icon="ui-icon-star" />
+			</p:submenu>
+			<p:submenu label="Manage clients">
+				<p:menuitem value="Clients" outcome="clients"
+					icon="ui-icon-star" />
+			</p:submenu>
+		</p:menu>
+		</h:form>
      </ui:composition>
 </html>
