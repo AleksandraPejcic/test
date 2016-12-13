@@ -54,10 +54,16 @@
 	<bean id="usersDao" class="com.teammanager.dao.UsersDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
 	</bean>
+	<bean id="tasksDao" class="com.teammanager.dao.TasksDaoImpl">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> 
+	</bean>
 	
 	 <!-- User Service Declaration -->
      <bean id="projectsService" class="com.teammanager.service.ProjectsServiceImpl">
          <property name="projectsDao" ref="projectsDao" />
+     </bean>
+     <bean id="tasksService" class="com.teammanager.service.TasksServiceImpl">
+         <property name="tasksDao" ref="tasksDao" />
      </bean>
 	
 

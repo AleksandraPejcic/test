@@ -8,7 +8,7 @@
 
 <ui:composition id="leftMenuCompositionId">
 	<h:form id="leftMenuFormId">
-		<p:dataTable var="tableItem" value="#{projectsView.projects}">
+		<p:dataTable var="tableItem" value="#{tasksView.tasks}">
 			<p:column headerText="Id">
 				<h:outputText value="#{tableItem.id}" />
 			</p:column>
@@ -16,13 +16,13 @@
 			<p:column headerText="Name">
 				<h:outputText value="#{tableItem.name}" />
 			</p:column>
-			
+
 			<p:column headerText="Description">
 				<h:outputText value="#{tableItem.description}" />
 			</p:column>
 
-			<p:column headerText="Status">
-				<h:outputText value="#{tableItem.status}" />
+			<p:column headerText="Attachments">
+				<h:outputText value="#{tableItem.attachments}" />
 			</p:column>
 		</p:dataTable>
 	</h:form>
