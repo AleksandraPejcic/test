@@ -86,8 +86,12 @@ public class ProjectsController implements Serializable {
 	}
 	
 	public List<String> getUsers() {
-		for (final Users user : this.usersService.getAll()) {
-			this.users.add(user.getUserFirstName());
+		if (!this.usersService.getAll().isEmpty()) {
+			for (final Users user : this.usersService.getAll()) {
+				this.users.add(user.getUserFirstName());
+			}
+		} else {
+			this.users = new ArrayList<>();
 		}
 		return this.users;
 	}
