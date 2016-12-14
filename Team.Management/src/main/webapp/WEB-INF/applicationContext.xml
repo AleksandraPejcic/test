@@ -10,7 +10,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/teammanagement" />
+		<property name="url" value="jdbc:mysql://localhost:3306/tm" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>
@@ -36,11 +36,18 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.current_session_context_class">thread</prop>
-				<prop key="hibernate.show_sql">false</prop>
+<!-- 				<prop key="hibernate.current_session_context_class">thread</prop> -->
+				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
 	</bean>
+	
+	<bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<bean id="projectsDao" class="com.teammanager.dao.ProjectsDaoImpl">
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
@@ -58,6 +65,9 @@
 	 <!-- User Service Declaration -->
      <bean id="projectsService" class="com.teammanager.service.ProjectsServiceImpl">
          <property name="projectsDao" ref="projectsDao" />
+     </bean>
+     <bean id="usersService" class="com.teammanager.service.UsersServiceImpl">
+         <property name="usersDao" ref="usersDao" />
      </bean>
 	
 

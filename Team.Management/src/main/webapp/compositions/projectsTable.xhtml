@@ -7,8 +7,9 @@
       xmlns:f="http://java.sun.com/jsf/core">
 
     <ui:composition id="leftMenuCompositionId">
+        <p:commandButton value='#{"Add new"}' action="#{projectsController.addProjects}" />
     	<h:form id="leftMenuFormId">
-    		<p:dataTable var="tableItem" value="#{projectsView.projects}">
+    		<p:dataTable var="tableItem" value="#{projectsController.projects}">
     			<p:column headerText="Id">
     				<h:outputText value="#{tableItem.id}" />
     			</p:column>

@@ -8,4 +8,6 @@ public interface ProjectsService {
 	
 	public List<Projects> getAll();
 	
+	public void saveOrUpdate(final Projects project);
+	
 }
