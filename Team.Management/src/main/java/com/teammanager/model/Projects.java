@@ -33,9 +33,6 @@ public class Projects {
 	
 	@Column(name="name")
 	private String name;
-	
-//	@OneToMany(mappedBy="project")
-//	private Set<Team> team;
 
 	@OneToOne
 	@PrimaryKeyJoinColumn
@@ -58,25 +55,25 @@ public class Projects {
     @JoinColumn(name="clientId")
 	private Clients client;
 	
-	@Column(name="time")
-	private Date time;
+	@Column(name="timeSpent")
+	private Date timeSpent;
 	
 	@Column(name="expences")
 	private String expences;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
-	public void setName(String name) {
+	public void setName(final String name) {
 		this.name = name;
 	}
 
@@ -88,7 +85,7 @@ public class Projects {
 //		this.teams = teams;
 //	}
 	public Team getTeams() {
-		return team;
+		return this.team;
 	}
 
 	public void setTeams(final Team team) {
@@ -99,7 +96,7 @@ public class Projects {
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
@@ -107,7 +104,7 @@ public class Projects {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(final String status) {
 		this.status = status;
 	}
 
@@ -115,7 +112,7 @@ public class Projects {
 		return createdByUser;
 	}
 
-	public void setCreatedByUser(Users createdByUser) {
+	public void setCreatedByUser(final Users createdByUser) {
 		this.createdByUser = createdByUser;
 	}
 
@@ -123,7 +120,7 @@ public class Projects {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
+	public void setCreatedDate(final Date createdDate) {
 		this.createdDate = createdDate;
 	}
 
@@ -131,20 +128,20 @@ public class Projects {
 		return client;
 	}
 
-	public void setClient(Clients client) {
+	public void setClient(final Clients client) {
 		this.client = client;
 	}
 
-	public Date getTime() {
-		return time;
+	public Date getTimeSpent() {
+		return this.timeSpent;
 	}
-
-	public void setTime(Date time) {
-		this.time = time;
+	
+	public void setTimeSpent(final Date timeSpent) {
+		this.timeSpent = timeSpent;
 	}
 
 	public String getExpences() {
-		return expences;
+		return this.expences;
 	}
 
 	public void setExpences(String expences) {

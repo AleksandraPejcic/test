@@ -55,7 +55,7 @@ public class Users {
 	@Cascade(value=org.hibernate.annotations.CascadeType.SAVE_UPDATE)
 	private Tasks tasks;
 	
-	@Column(name="userStatuserRegistrationDate")
+	@Column(name="userRegistrationDate")
 	private Date userRegistrationDate;
 
 	public int getId() {
